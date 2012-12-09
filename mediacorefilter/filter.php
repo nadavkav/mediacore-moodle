@@ -44,7 +44,7 @@ class filter_mediacorefilter extends moodle_text_filter {
 		 * This effects the actual filter function below.
 		 *
 		 */
-		$search = '/<a\s[^>]+http:\/\/([0-9A-Za-z])+\.mediacore\.tv\/([0-9A-Za-z])[^>]+>([0-9A-Za-z])+[^>]+>/';
+		$search = '/<a\s+href="http:\/\/([0-9A-Za-z]+)+\.mediacore\.tv\/([0-9A-Za-z]+)\/([0-9A-Za-z\-]+)[^>]+>/';
 		$newtext = preg_replace_callback($search, 'filter_mediacorefilter_callback', $newtext);
 		
 		if (empty($newtext) or $newtext === $text) {
